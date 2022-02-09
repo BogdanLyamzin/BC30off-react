@@ -1,24 +1,20 @@
-.header-menu {
-    display: flex;
-    justify-content: center;
+.menu {
+        display: flex;
+        justify-content: center;
 }
-
-.header-menu-item {
-
-}
-
-.header-menu-link {
+.link {
     display: inline-block;
     color: #303133;
     text-decoration: none;
     padding: 25px 20px;
 }
 
-.header-menu-link:hover {
+.link:hover {
     background-color: #ecf5ff;
 }
 
-.active {
+.activeLink {
+    composes: link;
     color: #409eff;
     border-bottom: 2px solid #409eff;
     background-color: #ecf5ff;

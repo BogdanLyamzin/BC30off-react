@@ -5,7 +5,7 @@ import MyBooks from "./modules/MyBooks";
 
 import data from "./data";
 
-import './shared/styles/common.scss';
+import './shared/styles/common.css';
 
 function App() {
   return (

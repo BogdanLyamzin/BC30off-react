@@ -1,0 +1,10 @@
+.book-list-container {
+    flex: 0 0 40%;
+    border: 1px solid #dcdfe6;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.btn {
+    background-color: red;
+}
