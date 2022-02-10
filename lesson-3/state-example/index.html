@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .link {
+            text-decoration: none;
+            display: inline-block;
+            padding: 10px 15px;
+            color: red;
+        }
+
+        .link.active {
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="menu" id="menu">
+
+    </div>
+    <button id="button">Нажми меня</button>
+    <script>
+        const button = document.getElementById("button");
+        const btn = {
+            name: "button",
+            click() {
+                console.log(this)
+            }
+        }
+        btn.click()
+        button.addEventListener("click", btn.click.bind(btn))
+        const menu = document.getElementById("menu");
+        const items = [
+            {
+                href: "#",
+                text: "item 1"
+            },
+            {
+                href: "#",
+                text: "item 2"
+            },
+            {
+                href: "#",
+                text: "item 3"
+            },
+        ];
+        let activeIndex = 0;
+        const renderMenu = () => {
+            const menuELements = items.map(({ href, text }, index) =>
+                `<a href="${href}" class="link ${activeIndex === index ? "active" : ""}">${text}</a>`);
+            menu.innerHTML = menuELements.join("");
+        };
+        renderMenu()
+        menu.addEventListener("click", function (e) {
+            e.preventDefault();
+            const elements = this.querySelectorAll(".link");
+            const index = [...elements].indexOf(e.target);
+            activeIndex = index;
+            renderMenu();
+        })
+    </script>
+</body>
+
+</html>
