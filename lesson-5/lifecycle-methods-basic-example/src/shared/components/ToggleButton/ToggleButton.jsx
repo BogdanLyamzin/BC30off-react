@@ -4,7 +4,17 @@ import styles from "./toggle-button.module.css";
 
 class ToggleButton extends Component {
     state = {
-        isActive: false
+        isActive: false,
+    }
+
+    componentDidMount() {
+        console.log("Did Mount")
+    }
+
+    componentDidUpdate(prevProps, prevState){
+        console.log("Did Update")
+        console.log(prevProps)
+        console.log(prevState)
     }
 
     handleClick = ()=> {
@@ -21,7 +31,7 @@ class ToggleButton extends Component {
         const {text} = this.props;
         const {isActive} = this.state;
         const {handleClick} = this;
-        
+        console.log("Render")
         return (
             <button onClick={handleClick} className={isActive ? styles.btnActive : styles.btn}>{text}</button>
         )

@@ -12,12 +12,9 @@ class Timer extends Component {
         value: 0,
         timerId: null
     }
-    componentDidMount(){
-        document.addEventListener("keydown", this.onEscape)
-    }
+
     componentWillUnmount(){
-        document.removeEventListener("keydown", this.onEscape)
-        this.stop();
+        this.stop()
     }
 
     onEscape = (e)=>{
@@ -27,26 +24,25 @@ class Timer extends Component {
     }
 
     start = ()=> {
-        const id = setInterval(()=>{
-            console.log("timer")
+        const timerId = setInterval(()=>{
+            console.log("tick")
             this.setState(({value}) => {
-                
                 return {
                     value: value + 1
                 }
             })
         }, 1000);
-        this.setState({timerId: id});
+        this.setState({timerId})
     }
 
     stop = ()=> {
         const {timerId} = this.state;
-        clearInterval(timerId);
+        clearInterval(timerId)
     }
 
     reset = () => {
         this.stop();
-        this.setState({value: 0})
+        this.setState({value: 0, timerId: null})
     }
 
     render(){

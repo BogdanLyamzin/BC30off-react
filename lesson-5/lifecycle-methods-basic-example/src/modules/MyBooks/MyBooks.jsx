@@ -13,6 +13,23 @@ class MyBooks extends Component {
         filter: ""
     }
 
+    componentDidMount(){
+        const books = localStorage.getItem("books");
+        if(books && JSON.parse(books).length) {
+            this.setState({
+                items: JSON.parse(books)
+            })
+        }
+    }
+
+    componentDidUpdate(prevProps, prevState){
+        if(prevState.items.length !== this.state.items.length) {
+            // console.log("Localstorage upgrade")
+            const {items} = this.state;
+            localStorage.setItem("books", JSON.stringify(items))
+        }
+    }
+
     handleChange = (e)=> {
         const {name, value} = e.target;
         this.setState({
@@ -70,6 +87,7 @@ class MyBooks extends Component {
     }
 
     render() {
+        // console.log("Render")
         const { removeBook, handleChange } = this;
         const { filter } = this.state;
         const filteredBooks = this.getFilteredBooks();
