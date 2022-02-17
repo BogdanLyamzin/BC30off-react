@@ -1,0 +1,24 @@
+@import "src/shared/styles/basic";
+
+.header {
+    &-menu {
+        @include flex(center, center);
+
+        &-link {
+            display: inline-block;
+            color: $font-color;
+            text-decoration: none;
+            padding: 25px 20px;
+
+            &:hover {
+                background-color: #ecf5ff;
+            }
+        }
+    }
+}
+
+.active {
+    color: $main-color;
+    border-bottom: 2px solid $main-color;
+    background-color: #ecf5ff;
+}

@@ -4,6 +4,7 @@ import HeaderMenu from "./modules/HeaderMenu";
 import FAQItem from "./modules/FAQ/FAQItem";
 import ToggleButton from "./shared/components/ToggleButton";
 import MyBooks from "./modules/MyBooks";
+import PostsSearch from "./modules/PostsSearch"
 
 import data from "./data";
 
@@ -13,7 +14,7 @@ function App() {
   return (
     <div className="App">
       <Section>
-        <HeaderMenu items={data.headerMenu} />
+        {/* <HeaderMenu items={data.headerMenu} /> */}
       </Section>
       <Section>
         {/* <FAQItem question="Сколько студентов" answer="Нисколько" /> */}
@@ -21,6 +22,9 @@ function App() {
       </Section>    
       <Section>
         <MyBooks />
+      </Section>
+      <Section>
+        <PostsSearch />
       </Section>
     </div>
   );
