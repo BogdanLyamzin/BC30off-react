@@ -1,7 +1,14 @@
+import { useContext } from "react";
+
+import { langContext } from "../../langContext";
+
+import local from "./locale.json";
+
 const Main = ()=> {
+    const {lang} = useContext(langContext)
     return (
         <div>
-            Добро пожаловать в ад!
+           {local.title[lang]}
         </div>
     )
 }

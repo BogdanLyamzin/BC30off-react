@@ -9,11 +9,11 @@ function App() {
   return (
     <div className="App">
       <Section>
-        <PostSearch />
+        {/* <PostSearch /> */}
       </Section> 
-      {/* <Section>
+      <Section>
         <MyBooks />
-      </Section> */}
+      </Section>
     </div>
   );
 }

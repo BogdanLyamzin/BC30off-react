@@ -1,9 +1,17 @@
-import { Component, useState } from "react";
+import { Component, useState, useEffect, createRef } from "react";
 
 const PostsSearchForm = ({onSubmit}) => {
     const [form, setForm] = useState({
         search: ""
     });
+
+    const inputRef = createRef(null);
+
+    useEffect(()=> {
+        if(inputRef.current) {
+            inputRef.current.focus()
+        }
+    }, []);
 
     const handleChange = ({target}) => {
         const {name, value} = target;
@@ -25,7 +33,7 @@ const PostsSearchForm = ({onSubmit}) => {
 
     return (
         <form onSubmit={handleSubmit} action="">
-            <input onChange={handleChange} value={form.search} type="text" name="search" placeholder="Поиск" />
+            <input ref={inputRef} onChange={handleChange} value={form.search} type="text" name="search" placeholder="Поиск" />
             <button type="submit">Поиск</button>
         </form>
     )

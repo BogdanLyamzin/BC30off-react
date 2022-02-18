@@ -1,6 +1,9 @@
+import {memo} from "react";
+
 import "./filter.css"
 
 const Filter = ({filter, handleChange}) => {
+    console.log("Filter render")
     return (
         <div className="form-group">
             <label htmlFor="" className="form-group-label">Фильтр по названию книги</label>
@@ -9,4 +12,4 @@ const Filter = ({filter, handleChange}) => {
     )
 }
 
-export default Filter;
+export default memo(Filter);
