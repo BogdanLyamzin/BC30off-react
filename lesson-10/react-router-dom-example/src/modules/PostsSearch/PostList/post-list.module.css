@@ -1,0 +1,21 @@
+.list {
+    list-style: none;
+    max-width: 1000px;
+    margin: 30px auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.item {
+    border: 1px solid grey;
+    border-radius: 5px;
+    padding: 15px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.link {
+    text-decoration: none;
+    color: black;
+}
