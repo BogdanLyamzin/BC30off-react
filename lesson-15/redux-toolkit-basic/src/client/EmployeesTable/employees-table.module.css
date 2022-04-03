@@ -1,0 +1,16 @@
+.table {
+    border: 1px solid;
+    border-collapse: collapse;
+    margin: 15px 0;
+}
+
+.thead {
+    padding: 15px;
+    border: 1px solid;
+    font-weight: bold;
+}
+
+.cell {
+    padding: 15px;
+    border: 1px solid;
+}

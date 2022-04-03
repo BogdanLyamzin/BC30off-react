@@ -1,0 +1,13 @@
+.inline {
+    display: flex;
+    align-items: center;
+}
+
+.group {
+    margin-right: 25px;
+}
+
+.label {
+    display: inline-block;
+    margin-right: 10px;
+}
