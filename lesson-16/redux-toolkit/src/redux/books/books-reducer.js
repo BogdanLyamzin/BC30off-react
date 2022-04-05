@@ -3,7 +3,7 @@ import {createReducer, combineReducers} from "@reduxjs/toolkit";
 import actions from "./books-actions";
 
 const items = createReducer([], {
-    [actions.fetchSuccess]: (state, {payload}) => [...state, ...payload],
+    [actions.fetchSuccess]: (_, {payload}) => [...payload],
     [actions.addSuccess]: (state, {payload}) => [...state, payload],
     [actions.removeSuccess]: (state, {payload}) => state.filter(item => item.id !== payload)
 });
