@@ -26,6 +26,7 @@ const login = async (data) => {
 
 const logout = async () => {
     const {data: result} = await axios.post("/users/logout");
+    instance.defaults.headers.common.Authorization = "";
     return result;
 }
 
